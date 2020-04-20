@@ -3,7 +3,6 @@ VERSION = 6.2-apathy
 
 # paths
 PREFIX = /usr
-MANPREFIX = ${PREFIX}/share/man
 
 # lib/include
 X11INC = /usr/include/X11

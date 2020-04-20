@@ -93,6 +93,7 @@ static Key keys[] = {
 	TAGKEYS(		XK_2,	1)
 	TAGKEYS(		XK_3,	2)
 	TAGKEYS(		XK_4,	3)
+	TAGKEYS(		XK_5,	4)
 
 	/* dwm functions */
 	{ MODKEY,               XK_Return,    spawn,             {.v = termcmd }    }, /* spawn term                */

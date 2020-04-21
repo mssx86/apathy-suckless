@@ -1,10 +1,27 @@
-### apathy-suckless
+# apathy-suckless
 #### this repository contains modified versions of:
+```
+* dmenu-4.9  mit   dmenu.suckless.org
+* dwm-6.2    mit   tools.suckless.org/dmenu
+* sbase-0.0  mit   git.suckless.org/sbase
+* sinit-1.1  mit   git.suckless.org/sinit
+* st-0.8.2   mit   st.suckless.org
+* ubase-0.1  mit   git.suckless.org/ubase
+* dwmblocks  gpl2  gitlab.com/svytx/dwmblocks
+```
 
-* (MIT)   dmenu-4.9
-* (MIT)   dwm-6.2
-* (GPLv2) dwmblocks (from [svytx/dwmblocks](https://gitlab.com/svytx/dwmblocks))
-* (MIT)   sbase-0.0
-* (MIT)   sinit-1.1
-* (MIT)   st-0.8.2
-* (MIT)   ubase-0.1
+#### directory tree:
+```
+.
+├── README.md
+├── dmenu
+├── dwm
+├── dwmblocks
+├── st
+└── utils
+    ├── sbase
+    ├── sinit
+    └── ubase
+
+11 directories, 447 files
+```

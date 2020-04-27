@@ -1,7 +1,7 @@
 char *termname         = "st-256color";
 static char *shell     = "/bin/yash";
 
-static int borderpx    = 5;
+static int borderpx    = 0;
 float alpha            = 1.0f;
 
 static char *font      = "xos4 Terminus:size=9:antialias=true:autohint=true";

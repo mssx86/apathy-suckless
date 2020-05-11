@@ -5,6 +5,7 @@
 * dwm-6.2    mit   tools.suckless.org/dmenu
 * sbase-0.0  mit   git.suckless.org/sbase
 * sinit-1.1  mit   git.suckless.org/sinit
+* slmenu-0.1 mit   bitbucket.org/rafaelgg/slmenu
 * st-0.8.2   mit   st.suckless.org
 * ubase-0.1  mit   git.suckless.org/ubase
 * dwmblocks  gpl2  gitlab.com/svytx/dwmblocks
@@ -17,6 +18,7 @@
 ├── dmenu
 ├── dwm
 ├── dwmblocks
+├── slmenu
 ├── st
 └── utils
     ├── sbase

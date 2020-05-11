@@ -33,7 +33,7 @@ static const Rule rules[] = {
 
 /* -- window sizing -- */
 static const unsigned int borderpx  = 1;    /* border thickness            */
-static const unsigned int gappx     = 2;    /* gaps                        */
+static const unsigned int gappx     = 0;    /* gaps                        */
 static const unsigned int snap      = 2;    /* snap pixel                  */
 static const float mfact            = 0.60; /* factor of master area size  */
 static const float smfact           = 0.0f; /* factor of tiled clients     */

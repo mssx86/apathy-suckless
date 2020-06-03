@@ -1,39 +1,27 @@
-# st - simple terminal
-# See LICENSE file for copyright and license details.
-.POSIX:
-
-include config.mk
+CC       = cc
+CPPFLAGS = -D_XOPEN_SOURCE=600 -I/usr/include/freetype2 \
+           -DVERSION=\"0.8.2-apathy\"
+CFLAGS   = -std=c99 -Os
+LDFLAGS  = -s -lm -lrt -lX11 -lutil -lXft -lXrender -lfontconfig -lfreetype
 
 SRC = st.c x.c
 OBJ = $(SRC:.c=.o)
 
-all: options st
-
-options:
-	@echo st build options:
-	@echo "CFLAGS  = $(STCFLAGS)"
-	@echo "LDFLAGS = $(STLDFLAGS)"
-	@echo "CC      = $(CC)"
+all: st
 
 .c.o:
-	$(CC) $(STCFLAGS) -c $<
+	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
-st.o: config.h st.h win.h
-x.o: arg.h config.h st.h win.h
-
-$(OBJ): config.h config.mk
-
-st: $(OBJ)
-	$(CC) -o $@ $(OBJ) $(STLDFLAGS)
+st: ${OBJ}
+	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean:
-	rm -f st $(OBJ) st-$(VERSION).tar.gz
+	rm -f st $(OBJ)
 
 install: st
-	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f st $(DESTDIR)$(PREFIX)/bin
-	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
-	tic -sx st.info
-	@echo Please see the README file regarding the terminfo entry of st.
+	mkdir -p    $(DESTDIR)/usr/bin
+	cp    -f st $(DESTDIR)/usr/bin
+	chmod 755   $(DESTDIR)/usr/bin/st
+	tic   -sx   st.info
 
-.PHONY: all options clean install
+.PHONY: all clean install

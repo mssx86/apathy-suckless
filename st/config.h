@@ -4,7 +4,7 @@ static char *shell     = "/bin/yash";
 static int borderpx    = 0;
 float alpha            = 1.0f;
 
-static char *font      = "xos4 Terminus:size=9:antialias=true:autohint=true";
+static char *font      = "xos4 Terminus:size=9";
 static float cwscale   = 1.0f;
 static float chscale   = 1.0f;
 int disablebold        = 1;

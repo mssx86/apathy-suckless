@@ -5,7 +5,7 @@
 static const int showbar            = 1;
 static const int topbar             = 1;
 static const char *tags[]           = { "1", "2", "3", "4", "5" };
-static const char *fonts[]          = { "xos4 Terminus:size=9:antialias=true:autohint=true" };
+static const char *fonts[]          = { "xos4 Terminus:size=9" };
 static const Layout layouts[]       = {
 	{ "T",     tile    },
 	{ "F",     NULL    },

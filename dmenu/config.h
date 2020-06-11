@@ -1,5 +1,5 @@
 static int topbar                        = 1;
-static const char *fonts[]               = { "xos4 Terminus-9:antialias=true:autohint=true"};
+static const char *fonts[]               = { "xos4 Terminus:size=9"};
 static const char *prompt                = NULL;
 static unsigned int lines                = 0;
 static const char worddelimiters[]       = " ";

@@ -1,4 +1,4 @@
-CC = cc
+CC = clang
 CPPFLAGS = -D_BSD_SOURCE -DVERSION=\"0.1-apathy\"
 CFLAGS   = -std=c89 -pedantic -Wall -Os
 LDFLAGS  = -s

@@ -1,4 +1,4 @@
-CC       = cc
+CC       = clang
 CPPFLAGS = -D_XOPEN_SOURCE=600 -I/usr/include/freetype2 \
            -DVERSION=\"0.8.2-apathy\"
 CFLAGS   = -std=c99 -Os

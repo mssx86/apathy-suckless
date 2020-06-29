@@ -7,9 +7,9 @@ static int borderpx                 = 0;
 static char *font                   = "xos4 Terminus:size=9";
 static float cwscale                = 1.0f;
 static float chscale                = 1.0f;
-//int disablebold                   = 1;
-//int disableitalic                 = 1;
-//int disableroman                  = 1;
+int disablebold                     = 1;
+int disableitalic                   = 1;
+int disableroman                    = 1;
 
 unsigned int tabspaces              = 8;
 static unsigned int cols            = 80;

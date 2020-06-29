@@ -16,9 +16,12 @@ dwmblocks/dwmblocks.o
 slmenu/slmenu
 slmenu/slmenu.o
 
-st/st
-st/st.o
-st/x.o
+st/0.8.2-apathy/st
+st/0.8.2-apathy/st.o
+st/0.8.2-apathy/x.o
+st/0.8.4-apathy/st
+st/0.8.4-apathy/st.o
+st/0.8.4-apathy/x.o
 
 utils/sbase/basename
 utils/sbase/basename.o

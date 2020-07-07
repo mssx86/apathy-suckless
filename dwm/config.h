@@ -70,8 +70,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_c,                       spawn,    SHCMD("/home/mss/.config/scripts/chrootmenu")               },
 	/* misc */
 	{ MODKEY,              XK_n,                       spawn,    SHCMD("xtrlock")                                            },
-	{ MODKEY,              XK_m,                       spawn,    SHCMD("feh --bg-fill --randomize /home/mss/cust/chan")      },
-	{ MODKEY|ShiftMask,    XK_m,                       spawn,    SHCMD("feh --bg-fill /home/mss/cust/other/black.png")       },
+	{ MODKEY,              XK_m,                       spawn,    SHCMD("feh --bg-fill --randomize /home/mss/cust")           },
 	{ Mod1Mask,            XK_m,                       spawn,    SHCMD("/home/mss/.fehb.def")                                },
 	{ MODKEY,              XK_w,                       spawn,    SHCMD("pkill -RTMIN+3 dwmblocks")                           },
 	/* alsa */

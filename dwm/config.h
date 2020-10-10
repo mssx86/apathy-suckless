@@ -5,7 +5,7 @@
 static const int showbar            = 1;
 static const int topbar             = 1;
 static const char *tags[]           = { "1", "2", "3", "4", "5" };
-static const char *fonts[]          = { "xos4 Terminus:size=9" };
+static const char *fonts[]          = { "xos4 Terminus:size=10" };
 static const Layout layouts[]       = {
 	{ "T",     tile    },
 	{ "F",     NULL    },
@@ -21,8 +21,8 @@ static const char *colors[][3]      = {
 	[SchemeTagsNorm]            = { "#ababab", "#000000",  dummy     }, /* tags, inactive          */
 	[SchemeInfoSel]             = { "#555555", "#000000",  dummy     }, /* window title, focused   */
 	[SchemeInfoNorm]            = { "#464646", "#000000",  dummy     }, /* window title, inactive  */
-	[SchemeBorderSel]           = {  dummy,     dummy,     "#252525" }, /* window border, focused  */
-	[SchemeBorderNorm]          = {  dummy,     dummy,     "#101010" }, /* window border, inactive */
+	[SchemeBorderSel]           = {  dummy,     dummy,     "#464646" }, /* window border, focused  */
+	[SchemeBorderNorm]          = {  dummy,     dummy,     "#252525" }, /* window border, inactive */
 };
 
 /* -- window rules -- */
@@ -32,7 +32,7 @@ static const Rule rules[] = {
 };
 
 /* -- window sizing -- */
-static const unsigned int borderpx  = 1;    /* border thickness            */
+static const unsigned int borderpx  = 2;    /* border thickness            */
 static const unsigned int gappx     = 0;    /* gaps                        */
 static const unsigned int snap      = 2;    /* snap pixel                  */
 static const float mfact            = 0.60; /* factor of master area size  */
@@ -79,6 +79,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    XF86XK_AudioRaiseVolume,    spawn,    SHCMD("amixer -q set Capture 3dB+")                         },
 	{ MODKEY|ShiftMask,    XF86XK_AudioLowerVolume,    spawn,    SHCMD("amixer -q set Capture 3dB-")                         },
 	{ 0,                   XF86XK_AudioMute,           spawn,    SHCMD("amixer -q set Master toggle")                        },
+	{ 0,                   XF86XK_AudioMicMute,        spawn,    SHCMD("amixer -q set Capture toggle")                       },
 	/* mpd */
 	{ 0,                   XF86XK_AudioPlay,           spawn,    SHCMD("mpc -q toggle;    pkill -RTMIN+1 dwmblocks")         },
 	{ 0,                   XF86XK_AudioStop,           spawn,    SHCMD("mpc -q stop;      pkill -RTMIN+1 dwmblocks")         },

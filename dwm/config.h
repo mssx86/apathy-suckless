@@ -4,7 +4,7 @@
 /* -- bar -- */
 static const int showbar            = 1;
 static const int topbar             = 1;
-static const char *tags[]           = { "1", "2", "3", "4", "5" };
+static const char *tags[]           = { "a", "b", "c", "d", "5" };
 static const char *fonts[]          = { "xos4 Terminus:size=10" };
 static const Layout layouts[]       = {
 	{ "T",     tile    },
@@ -32,9 +32,9 @@ static const Rule rules[] = {
 };
 
 /* -- window sizing -- */
-static const unsigned int borderpx  = 2;    /* border thickness            */
-static const unsigned int gappx     = 0;    /* gaps                        */
-static const unsigned int snap      = 2;    /* snap pixel                  */
+static const unsigned int borderpx  = 1;    /* border thickness            */
+static const unsigned int gappx     = 3;    /* gaps                        */
+static const unsigned int snap      = 3;    /* snap pixel                  */
 static const float mfact            = 0.60; /* factor of master area size  */
 static const float smfact           = 0.0f; /* factor of tiled clients     */
 static const unsigned int minwsz    = 30;   /* min height for smfact       */
@@ -72,7 +72,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_n,                       spawn,    SHCMD("xtrlock")                                            },
 	{ MODKEY,              XK_m,                       spawn,    SHCMD("feh --bg-fill --randomize /home/mss/cust")           },
 	{ Mod1Mask,            XK_m,                       spawn,    SHCMD("/home/mss/.fehb.def")                                },
-	{ MODKEY,              XK_w,                       spawn,    SHCMD("pkill -RTMIN+3 dwmblocks")                           },
+//	{ MODKEY,              XK_w,                       spawn,    SHCMD("pkill -RTMIN+3 dwmblocks")                           },
 	/* alsa */
 	{ 0,                   XF86XK_AudioRaiseVolume,    spawn,    SHCMD("amixer -q set Master 3dB+")                          },
 	{ 0,                   XF86XK_AudioLowerVolume,    spawn,    SHCMD("amixer -q set Master 3dB-")                          },
@@ -81,10 +81,14 @@ static Key keys[] = {
 	{ 0,                   XF86XK_AudioMute,           spawn,    SHCMD("amixer -q set Master toggle")                        },
 	{ 0,                   XF86XK_AudioMicMute,        spawn,    SHCMD("amixer -q set Capture toggle")                       },
 	/* mpd */
-	{ 0,                   XF86XK_AudioPlay,           spawn,    SHCMD("mpc -q toggle;    pkill -RTMIN+1 dwmblocks")         },
-	{ 0,                   XF86XK_AudioStop,           spawn,    SHCMD("mpc -q stop;      pkill -RTMIN+1 dwmblocks")         },
-	{ 0,                   XF86XK_AudioNext,           spawn,    SHCMD("mpc -q next;      pkill -RTMIN+1 dwmblocks")         },
-	{ 0,                   XF86XK_AudioPrev,           spawn,    SHCMD("mpc -q prev;      pkill -RTMIN+1 dwmblocks")         },
+//	{ 0,                   XF86XK_AudioPlay,           spawn,    SHCMD("mpc -q toggle;    pkill -RTMIN+1 dwmblocks")         },
+//	{ 0,                   XF86XK_AudioStop,           spawn,    SHCMD("mpc -q stop;      pkill -RTMIN+1 dwmblocks")         },
+//	{ 0,                   XF86XK_AudioNext,           spawn,    SHCMD("mpc -q next;      pkill -RTMIN+1 dwmblocks")         },
+//	{ 0,                   XF86XK_AudioPrev,           spawn,    SHCMD("mpc -q prev;      pkill -RTMIN+1 dwmblocks")         },
+	{ 0,                   XF86XK_AudioPlay,           spawn,    SHCMD("mpc -q toggle")                                      },
+	{ 0,                   XF86XK_AudioStop,           spawn,    SHCMD("mpc -q stop")                                        },
+	{ 0,                   XF86XK_AudioNext,           spawn,    SHCMD("mpc -q next")                                        },
+	{ 0,                   XF86XK_AudioPrev,           spawn,    SHCMD("mpc -q prev")                                        },
 	{ MODKEY,              XF86XK_AudioRaiseVolume,    spawn,    SHCMD("mpc -q vol +5")                                      },
 	{ MODKEY,              XF86XK_AudioLowerVolume,    spawn,    SHCMD("mpc -q vol -5")                                      },
 
@@ -128,9 +132,12 @@ static Key keys[] = {
 /* actions are: ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, ClkRootWin */
 static Button buttons[] = {
 	/* mpd and alsa control */
-	{ ClkStatusText,    0,         Button1,    spawn,            SHCMD("mpc -q next;   pkill -RTMIN+1 dwmblocks") },
-	{ ClkStatusText,    0,         Button3,    spawn,            SHCMD("mpc -q prev;   pkill -RTMIN+1 dwmblocks") },
-	{ ClkStatusText,    0,         Button2,    spawn,            SHCMD("mpc -q toggle; pkill -RTMIN+1 dwmblocks") },
+//	{ ClkStatusText,    0,         Button1,    spawn,            SHCMD("mpc -q next;   pkill -RTMIN+1 dwmblocks") },
+//	{ ClkStatusText,    0,         Button3,    spawn,            SHCMD("mpc -q prev;   pkill -RTMIN+1 dwmblocks") },
+//	{ ClkStatusText,    0,         Button2,    spawn,            SHCMD("mpc -q toggle; pkill -RTMIN+1 dwmblocks") },
+	{ ClkStatusText,    0,         Button1,    spawn,            SHCMD("mpc -q next")                             },
+	{ ClkStatusText,    0,         Button3,    spawn,            SHCMD("mpc -q prev")                             },
+	{ ClkStatusText,    0,         Button2,    spawn,            SHCMD("mpc -q toggle")                           },
 	{ ClkStatusText,    0,         Button4,    spawn,            SHCMD("mpc -q vol +5")                           },
 	{ ClkStatusText,    0,         Button5,    spawn,            SHCMD("mpc -q vol -5")                           },
 	{ ClkStatusText,    MODKEY,    Button2,    spawn,            SHCMD("amixer -q set Master toggle")             },

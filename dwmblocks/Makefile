@@ -1,7 +1,6 @@
-CC       = clang
-CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2
-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os
-LDFLAGS  = -s -lX11
+CC      ?= x86_64-apathy-linux-musl-gcc
+CFLAGS  += -std=c99 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2
+LDFLAGS += -s -lX11
 
 SRC      = dwmblocks.c
 OBJ      = ${SRC:.c=.o}
@@ -9,10 +8,10 @@ OBJ      = ${SRC:.c=.o}
 all: dwmblocks
 
 .c.o:
-	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
+	${CC} -c ${CFLAGS} $<
 
 dwmblocks: ${OBJ}
-	${CC} -o $@ ${OBJ} ${LDFLAGS}
+	${CC} -o $@ ${OBJ} ${CFLAGS} ${LDFLAGS}
 
 clean:
 	rm     -f dwmblocks ${OBJ}

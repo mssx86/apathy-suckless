@@ -1,9 +1,6 @@
-CC       = clang
-CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700           \
-           -D_POSIX_C_SOURCE=200809L -DXINERAMA -I/usr/include/freetype2 \
-           -DVERSION=\"4.9-apathy\"
-CFLAGS   = -std=c99 -pedantic -Wall -Os
-LDFLAGS  = -s -lX11 -lXinerama -lfontconfig -lXft
+CC      ?= x86_64-apathy-linux-musl-gcc
+CFLAGS  += -std=c99 -DXINERAMA -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"4.9-apathy\" -D_XOPEN_SOURCE=700 -I/usr/include/freetype2
+LDFLAGS += -s -lX11 -lXft -lXinerama -lfontconfig
 
 SRC      = drw.c dmenu.c stest.c util.c
 OBJ      = $(SRC:.c=.o)
@@ -11,13 +8,13 @@ OBJ      = $(SRC:.c=.o)
 all: dmenu stest
 
 .c.o:
-	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
+	${CC} -c ${CFLAGS} $<
 
 dmenu: ${OBJ}
-	${CC} -o $@ dmenu.o drw.o util.o ${LDFLAGS}
+	${CC} -o $@ dmenu.o drw.o util.o ${CFLAGS} ${LDFLAGS}
 
 stest: stest.o
-	$(CC) -o $@ stest.o $(LDFLAGS)
+	$(CC) -o $@ stest.o ${CFLAGS} $(LDFLAGS)
 
 clean:
 	rm -f dmenu stest $(OBJ)

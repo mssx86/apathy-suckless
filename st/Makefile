@@ -1,11 +1,9 @@
-CC       = clang
-CPPFLAGS = -D_XOPEN_SOURCE=600 -I/usr/include/freetype2 \
-           -DVERSION=\"0.8.4-apathy\"
-CFLAGS   = -std=c99 -O2
-LDFLAGS  = -s -lm -lrt -lX11 -lutil -lXft -lXrender -lfontconfig -lfreetype
+CC      ?= x86_64-apathy-linux-musl-gcc
+CFLAGS  += -std=c99 -D_XOPEN_SOURCE=600 -DVERSION=\"0.8.4-apathy\" -I/usr/include/freetype2 
+LDFLAGS += -s -lX11 -lXft -lXrender -lfontconfig -lfreetype -lm -lrt -lutil 
 
-SRC = st.c x.c
-OBJ = $(SRC:.c=.o)
+SRC      = st.c x.c
+OBJ      = $(SRC:.c=.o)
 
 all: st
 
@@ -13,7 +11,7 @@ all: st
 	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
 
 st: ${OBJ}
-	${CC} -o $@ ${OBJ} ${LDFLAGS}
+	${CC} -o $@ ${OBJ} ${CFLAGS} ${LDFLAGS}
 
 clean:
 	rm -f st $(OBJ)

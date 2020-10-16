@@ -1,8 +1,6 @@
-CC       = clang
-CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DXINERAMA \
-           -DVERSION=\"6.2-apathy\" -I/usr/include/freetype2
-CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os
-LDFLAGS  = -s -lX11 -lXinerama -lXft -lfontconfig
+CC      ?= x86_64-apathy-linux-musl-gcc
+CFLAGS  += -std=c99 -DXINERAMA -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"6.2-apathy\" -I/usr/include/freetype2
+LDFLAGS += -s -lX11 -lXft -lXinerama -lfontconfig 
 
 SRC      = drw.c dwm.c util.c
 OBJ      = ${SRC:.c=.o}
@@ -10,7 +8,7 @@ OBJ      = ${SRC:.c=.o}
 all: dwm
 
 .c.o:
-	${CC} -c ${CFLAGS} ${CPPFLAGS} $<
+	${CC} -c ${CFLAGS} $<
 
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}

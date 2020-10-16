@@ -2,9 +2,9 @@ char *termname                      = "st-256color";
 static char *shell                  = "/bin/yash";
 
 static int borderpx                 = 0;
-float alpha                         = 0.80f;
+float alpha                         = 0.85f;
 
-static char *font                   = "xos4 Terminus:size=9";
+static char *font                   = "xos4 Terminus:size=10";
 static float cwscale                = 1.0f;
 static float chscale                = 1.0f;
 int disablebold                     = 1;

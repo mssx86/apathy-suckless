@@ -4,8 +4,8 @@
 /* -- bar -- */
 static const int showbar            = 1;
 static const int topbar             = 1;
-static const char *tags[]           = { "a", "b", "c", "d", "5" };
-static const char *fonts[]          = { "xos4 Terminus:size=10" };
+static const char *tags[]           = { "a", "b", "c", "d", "e", "f" };
+static const char *fonts[]          = { "xos4 Terminus:size=10"      };
 static const Layout layouts[]       = {
 	{ "T",     tile    },
 	{ "F",     NULL    },
@@ -33,8 +33,8 @@ static const Rule rules[] = {
 
 /* -- window sizing -- */
 static const unsigned int borderpx  = 1;    /* border thickness            */
-static const unsigned int gappx     = 3;    /* gaps                        */
-static const unsigned int snap      = 3;    /* snap pixel                  */
+static const unsigned int gappx     = 5;    /* gaps                        */
+static const unsigned int snap      = 5;    /* snap pixel                  */
 static const float mfact            = 0.60; /* factor of master area size  */
 static const float smfact           = 0.0f; /* factor of tiled clients     */
 static const unsigned int minwsz    = 30;   /* min height for smfact       */
@@ -98,6 +98,7 @@ static Key keys[] = {
 	TAGKEYS(		XK_3,	2)
 	TAGKEYS(		XK_4,	3)
 	TAGKEYS(		XK_5,	4)
+	TAGKEYS(		XK_6,	5)
 
 	/* dwm functions */
 	{ MODKEY,               XK_Return,    spawn,             {.v = termcmd }    }, /* spawn term                */

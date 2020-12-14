@@ -37,10 +37,12 @@ static const char *colorname[]      = {
  "#FFFFFF",
 
  [255] = 0,
+
+ "#000001",
 };
 
 unsigned int defaultfg              = 6;
-unsigned int defaultbg              = 0;
+unsigned int defaultbg              = 256;
 static unsigned int defaultcs       = 9;
 static unsigned int defaultrcs      = 1;
 static unsigned int defaultattr     = 11;

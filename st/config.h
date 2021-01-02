@@ -19,22 +19,23 @@ static unsigned int cursorshape     = 4;
 static unsigned int cursorthickness = 2;
 
 static const char *colorname[]      = {
- "#000000",
- "#AA0000",
- "#00AA00",
- "#AAAA00",
- "#0000AA",
- "#AA00AA",
- "#00AAAA",
- "#AAAAAA",
- "#555555",
- "#FF5555",
- "#55FF55",
- "#FFFF55",
- "#5555FF",
- "#FF55FF",
- "#55FFFF",
- "#FFFFFF",
+ "#000000", /* 00 l:black   */
+ "#AA0000", /* 01 l:red     */
+ "#00AA00", /* 02 l:green   */
+ "#AAAA00", /* 03 l:yellow  */
+ "#0000AA", /* 04 l:blue    */
+ "#AA00AA", /* 05 l:magenta */
+ "#00AAAA", /* 06 l:cyan    */
+ "#AAAAAA", /* 07 l:white   */
+
+ "#555555", /* 08 b:black   */
+ "#FF5555", /* 09 b:red     */
+ "#55FF55", /* 10 b:green   */
+ "#FFFF55", /* 11 b:yellow  */
+ "#5555FF", /* 12 b:blue    */
+ "#FF55FF", /* 13 b:magenta */
+ "#55FFFF", /* 14 b:cyan    */
+ "#FFFFFF", /* 15 b:white   */
 
  [255] = 0,
 

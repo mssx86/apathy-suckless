@@ -32,8 +32,8 @@ static const Rule rules[]           = {
 
 /* -- window sizing -- */
 static const unsigned int borderpx  = 1;    /* border thickness            */
-static const unsigned int gappx     = 5;    /* gaps                        */
-static const unsigned int snap      = 5;    /* snap pixel                  */
+static const unsigned int gappx     = 3;    /* gaps                        */
+static const unsigned int snap      = 3;    /* snap pixel                  */
 static const float mfact            = 0.60; /* factor of master area size  */
 static const float smfact           = 0.0f; /* factor of tiled clients     */
 static const unsigned int minwsz    = 30;   /* min height for smfact       */

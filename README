@@ -5,6 +5,5 @@ apathy-suckless
   -------  -------  ------
 * dmenu/   mit      tools.suckless.org/dmenu
 * dwm/     mit      dwm.suckless.org
-* init/    mit      git.suckless.org/{sinit,ubase}
 * slmenu/  mit      bitbucket.org/rafaelgg/slmenu
 * st/      mit      st.suckless.org
